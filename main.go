@@ -33,7 +33,7 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	command := app.NewSchedulerCommand(app.WithPlugin(plugins.SamplePlugin, plugins.SampleFactory))
+	command := app.NewSchedulerCommand(app.WithPlugin(plugins.Name, plugins.SampleFactory))
 
 	// TODO: once we switch everything over to Cobra commands, we can go back to calling
 	// utilflag.InitFlags() (by removing its pflag.Parse() call). For now, we have to set the
