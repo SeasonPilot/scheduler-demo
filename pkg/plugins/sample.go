@@ -31,7 +31,8 @@ func (p preFilterState) Clone() framework.StateData {
 }
 
 func computePodResourceLimit(pod *corev1.Pod) *preFilterState {
-	var res *preFilterState
+	//var res *preFilterState  //fixme: 指针未初始化
+	var res = &preFilterState{}
 	for _, c := range pod.Spec.Containers {
 		res.Add(c.Resources.Limits)
 	}
